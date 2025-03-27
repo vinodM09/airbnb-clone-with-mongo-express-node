@@ -1,0 +1,18 @@
+<% layout('/layouts/boilerplate') %>
+
+<!-- card for index page -->
+<body>
+    <div class="card-container col-md offset-1">
+        <% for ( oneTitle of list ) { %>
+            <a href="/listings/<%=oneTitle._id%>" class="card-a-tag" id="card-a-id">
+                    <div class="card" style="width: 20rem; aspect-ratio: 1/1;">
+                        <img src="<%=oneTitle.image%>" class="card-img-top" id="card-img-id" alt="listing image" style="height:20rem; object-fit:cover;">
+                        <div class="card-body">
+                          <b><p class="card-text"><%=oneTitle.title%></p></b>
+                          <p>&#8377;<%=oneTitle.price.toLocaleString('eng-IN')%> <i>night</i></p>
+                        </div>
+                    </div>
+            </a>
+            <% } %>
+    </div>
+</body>

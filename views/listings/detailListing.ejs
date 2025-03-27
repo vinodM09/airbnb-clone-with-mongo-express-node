@@ -1,0 +1,36 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <div class="row">
+        <div class="col-10">
+            <div class="card mb-3 offset-2">
+            <img src="<%=detailListing.image%>" class="card-img-top show-detail-img" alt="Listing Image">
+            <div class="card-body">
+              <h5 class="card-title"><%=detailListing.title%></h5>
+              <p>&#8377;<%=detailListing.price.toLocaleString('eng-IN')%> <i>night</i></p>
+              <p class="card-text"><%=detailListing.description%></p>
+              <p><i><%=detailListing.location%></i>, <%=detailListing.country%></p>
+              <p></p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              <form method="GET" action="/listings/<%=detailListing._id%>/edit_form">
+                <button class="btn btn-dark edit-listing-btn col-2">Edit</button>
+              </form> <br>
+              <form method="POST" action="/listings/<%=detailListing._id%>?_method=DELETE">
+                <button class="btn btn-dark delete-listing-btn col-2">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+      <!-- <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        </div>
+        <img src="..." class="card-img-bottom" alt="...">
+      </div> -->
+
+
+</body>

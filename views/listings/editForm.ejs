@@ -1,0 +1,35 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3 class="mb-3">Edit Your Listing</h3>
+            <form method="POST" action="/listings/<%=detailListing._id%>?_method=PUT">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="title" value="<%=detailListing.title%>" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea type="text" name="description" rows="4" class="form-control"><%=detailListing.description%></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image URL/Link</label>
+                    <input type="text" name="image" value="<%=detailListing.image%>" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" name="price" value="<%=detailListing.price%>" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" name="location" class="form-control" value="<%=detailListing.location%>">
+                </div>
+                <div class="mb-5">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" name="country" value="<%=detailListing.country%>" class="form-control">
+                </div>
+                <button class="btn btn-dark edit-save-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</body>
